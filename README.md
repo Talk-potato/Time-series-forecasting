@@ -32,3 +32,10 @@ project
     1. preprocess/get_daegu_node_link.ipynb 실행
     2. preprocess/select_node_link.ipynb 실행
     3. preprocess/process_traffic_data.ipynb 실행
+
+## 4. 모델 설계, 훈련/테스트
+### 현재 train_test.ipynb는 2023년 09월 10일 데이터로 훈련하고, 2023년 09월 11일 데이터로 5분 뒤 도로 속도 예측 수행.  
+- 설계한 모델은 model 폴더에 작성
+- 모델 훈련 및 테스트는 아래 방법 참고
+- 방법:
+    1. train_test.ipynb 실행
