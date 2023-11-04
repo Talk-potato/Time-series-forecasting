@@ -4,13 +4,14 @@
 <pre>
 project
 ├─ data: 데이터
+|  ├─ inference_result: 추론 결과
 │  ├─ processed_data: 전처리된 데이터
 │  │  ├─ node_link
 │  │  └─ traffic
 │  └─ raw_data: 전처리 안 된 데이터
 │      ├─ node_link
 │      └─ traffic
-├─ model: 신경망 모델
+├─ model: 신경망 모델 코드 및 weight값
 ├─ preprocess: 데이터 전처리 코드
 ├─ util: 기타 코드(데이터 다운, 압축해제 등)
 └─ visualize: 시각화 코드(시간 남으면)
@@ -21,7 +22,7 @@ project
 - 방법: initialize.py 실행
 
 ## 2. 데이터 다운로드
-### 현재 download_traffic_data.py는 2023년 09월 10일 데이터만 다운 받음. 추후 수정 예정
+### 현재 download_traffic_data.py는 2023년 09월 전체 데이터를 다운 받음.
 - 교통상황 데이터 다운로드 및 압축 해제
 - 방법: download_traffic_data.py 실행
 
@@ -30,12 +31,18 @@ project
 - 교통상황 데이터 전처리
 - 방법:  
     1. preprocess/get_daegu_node_link.ipynb 실행
-    2. preprocess/select_node_link.ipynb 실행
-    3. preprocess/process_traffic_data.ipynb 실행
+    2. preprocess/select_daegu_node_link.ipynb 실행
+    3. preprocess/process_all_traffic_data.ipynb 실행
 
-## 4. 모델 설계, 훈련/테스트
-### 현재 train_test.ipynb는 2023년 09월 10일 데이터로 훈련하고, 2023년 09월 11일 데이터로 5분 뒤 도로 속도 예측 수행.  
-- 설계한 모델은 model 폴더에 작성
-- 모델 훈련 및 테스트는 아래 방법 참고
+## 4. 모델 설계
+- model 폴더에 각자 설계
+
+## 5. 모델 훈련
+### 현재 train.ipynb는 2023년 09월 데이터로 훈련함.
 - 방법:
-    1. train_test.ipynb 실행
+    1. train.ipynb 실행
+
+## 6. 모델 테스트
+### 현재 inference.ipynb는 2023년 10월 데이터로 추론함.
+- 방법:
+    1. inference.ipynb 실행
