@@ -21,14 +21,16 @@ project
 - data 디렉토리 생성 및 표준노드링크 정보 다운로드
 - 방법: initialize.py 실행
 
-## 2. 데이터 다운로드 (데이터 추가하려는 경우 실행)
-### 현재 download_traffic_data.py는 2023년 09월 전체 데이터를 다운 받음. target_list를 수정하면 다른 데이터 다운 가능
+## 2. ITS 데이터 다운로드 (데이터 추가하려는 경우 실행)
+### target_list를 수정하면 다른 데이터 다운 가능
 - 교통상황 데이터 다운로드 및 압축 해제
 - 방법: download_traffic_data.py 실행
 
-## 3. 데이터 전처리 (데이터 추가 시 실행)
+## 3. ITS 데이터 전처리 (데이터 추가 시 실행)
+### 링크 추출 변경 및 추가 데이터 전처리를 수행하려는 경우, 변수들을 일부 수정해야 함
 - 표준노드링크 파일로부터, 사용할 노드와 링크에 대한 정보 추출
 - 교통상황 데이터 전처리
+- 일별로 누락된 시간대는 선형보간으로 처리
 - 방법:  
     1. preprocess/get_daegu_node_link.ipynb 실행
     2. preprocess/select_daegu_node_link.ipynb 실행

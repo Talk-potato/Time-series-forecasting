@@ -5,7 +5,6 @@ import util.decompressor as decompressor
 # make data directory
 os.makedirs('./data/processed_data/node_link', exist_ok=True)
 os.makedirs('./data/processed_data/traffic', exist_ok=True)
-os.makedirs('./data/processed_data/inference_result', exist_ok=True)
 os.makedirs('./data/raw_data/node_link', exist_ok=True)
 os.makedirs('./data/raw_data/traffic', exist_ok=True)
 
