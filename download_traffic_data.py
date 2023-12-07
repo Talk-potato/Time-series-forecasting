@@ -3,7 +3,7 @@ import util.decompressor as decompressor
 import os
 
 path = './data/raw_data/traffic/'
-target_list = [f'202306{i:02}_5Min.zip' for i in range(1, 3)]
+target_list = [f'202310{i:02}_5Min.zip' for i in range(20, 23)]
 
 class its_downloader(downloader.FileDownloader):
     def __init__(self, thread_num=2, download_unit=1024*32):
@@ -19,7 +19,8 @@ class its_downloader(downloader.FileDownloader):
         self.decompressor.decompress(path_list, [destpath]*len(target_list))
 
         for i in path_list:
-            os.remove(i)
+            if os.path.exists(i):
+                os.remove(i)
 
 t = its_downloader()
 t.get_data(path, path, target_list)

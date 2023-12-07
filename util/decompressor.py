@@ -1,5 +1,6 @@
 import zipfile
 from concurrent import futures
+import os
 
 DEFAULT_THREAD_NUM = 1
 
@@ -21,7 +22,8 @@ class Decompressor:
             futures.wait(task)
 
     def _decompress(self, src, dest, pos):
-        with zipfile.ZipFile(src, "r") as zip_ref:
-            print(f'[Decompress Started]: {src} to {dest}')
-            zip_ref.extractall(dest)
-            print(f'[Decompress Finished]: {src} to {dest}')
+        if os.path.exists(src):
+            with zipfile.ZipFile(src, "r") as zip_ref:
+                print(f'[Decompress Started]: {src} to {dest}')
+                zip_ref.extractall(dest)
+                print(f'[Decompress Finished]: {src} to {dest}')
